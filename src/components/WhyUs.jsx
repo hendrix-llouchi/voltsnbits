@@ -30,7 +30,7 @@ export default function WhyUs() {
       <div className="content-wrap">
         <div className="section-intro section-intro--split">
           <div>
-            <Eyebrow>Why Vits&amp;Bolts</Eyebrow>
+            <Eyebrow>Why Volts&amp;Bits</Eyebrow>
             <h2 className="section-heading" id="why-us-heading">
               Technical guidance. Human mentorship.
             </h2>

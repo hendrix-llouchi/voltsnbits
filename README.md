@@ -1,4 +1,4 @@
-# vitsnbolt — Final-Year Project Support Website
+# Volts&Bits — Final-Year Project Support Website
 
 > *"Your idea. Our expertise. Let’s build it together."*
 

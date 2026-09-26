@@ -15,7 +15,7 @@ export default function Footer() {
         <Divider />
         <div className="site-footer__grid">
           <div className="site-footer__brand">
-            <p className="site-footer__wordmark">Vits&amp;Bolts</p>
+            <p className="site-footer__wordmark">Volts&amp;Bits</p>
             <p className="site-footer__description">
               Guiding final-year students from project idea to confident defense.
             </p>
@@ -48,7 +48,7 @@ export default function Footer() {
 
         <Divider />
         <div className="site-footer__bottom">
-          <p>&copy; 2026 Vits&amp;Bolts. All rights reserved.</p>
+          <p>&copy; 2026 Volts&amp;Bits. All rights reserved.</p>
           <p>Built to help students understand, build, and confidently defend their work.</p>
         </div>
       </div>

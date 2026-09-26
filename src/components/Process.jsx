@@ -57,7 +57,7 @@ export default function Process() {
       <div className="content-wrap">
         <div className="section-intro section-intro--split">
           <div>
-            <Eyebrow>The Vits&amp;Bolts method</Eyebrow>
+            <Eyebrow>The Volts&amp;Bits method</Eyebrow>
             <h2 className="section-heading" id="process-heading">
               From a rough idea to a project you can defend.
             </h2>
@@ -67,7 +67,7 @@ export default function Process() {
           </p>
         </div>
 
-        <ol className="process-steps" aria-label="The four stages of the Vits&Bolts method">
+        <ol className="process-steps" aria-label="The four stages of the Volts&Bits method">
           {processSteps.map((step) => <ProcessStep key={step.number} {...step} />)}
         </ol>
 

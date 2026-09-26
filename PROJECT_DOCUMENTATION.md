@@ -2,7 +2,7 @@
 
 > **Brand Promise**: *"Your idea. Our expertise. Let’s build it together."*
 
-Updated service offering, visual identity, landing-page structure, and lead-generation plan for the **vitsnbolt** final-year project support platform.
+Updated service offering, visual identity, landing-page structure, and lead-generation plan for the **Volts&Bits** final-year project support platform.
 
 ---
 
