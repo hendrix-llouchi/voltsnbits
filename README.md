@@ -1,62 +1,57 @@
-# Volts&Bits — Final-Year Project Support Website
+# Volts&Bits
 
-> *"Your idea. Our expertise. Let’s build it together."*
+A single-page marketing site for final-year project support. The site is designed to introduce the service, explain the process, and convert visitors into project inquiries through a direct call-to-action.
 
-A focused marketing and inquiry landing page platform connecting final-year, capstone, and research students with expert mentorship and practical development support in **Machine Learning & AI**, **Software & IoT**, **System Integration**, and **Academic Project Planning**.
+## Project purpose
 
----
+Volts&Bits helps final-year, capstone, and research students move from a rough idea to a clear, defensible project. The landing page positions the business around practical mentorship, technical direction, and project clarity rather than generic consulting language.
 
-## 📖 Complete Documentation & Specification
+## Current site scope
 
-The full project concept, visual identity system, landing-page architecture, Google Form requirements, and development roadmap are documented in detail in:
+The current implementation is a responsive React + Vite landing page with:
 
-👉 **[PROJECT_DOCUMENTATION.md](./PROJECT_DOCUMENTATION.md)**
+- a strong sticky navigation
+- hero section with a clear lead form CTA
+- service overview cards
+- project support journey/process section
+- who-it-helps section
+- why-us value proposition section
+- final CTA and footer
 
----
+## Stack
 
-## 🎨 Visual Identity & Color Palette
+- React 19
+- Vite
+- Tailwind CSS
+- Lucide React icons
 
-| Color | Hex | Role |
-| :--- | :--- | :--- |
-| **Dark Slate Grey** | `#2D3741` | Primary dark: hero overlay, header, footer, primary buttons |
-| **Light Grey / Beige** | `#D0CFC8` | Main neutral background, section panels, borders |
-| **Bronze / Gold** | `#AE824B` | Primary accent: headlines, icons, key highlights |
-| **Light Brown** | `#A26B38` | Warm secondary accent for cards, labels, and callouts |
-| **White** | `#FFFFFF` | Text on dark backgrounds, clean card surfaces, whitespace |
-| **Teal** | `#185B6C` | Technology accent: links, interactive states, secondary buttons |
+## Local development
 
----
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+3. Build for production:
+   ```bash
+   npm run build
+   ```
+4. Preview the production build:
+   ```bash
+   npm run preview
+   ```
 
-## 🛠️ Core Services
+## Inquiry link
 
-1. **Machine Learning & AI Integration** — Model selection, data pipelines, and intelligent feature integration.
-2. **Focused Research & Gap Analysis** — Prior literature review, problem formulation, and novelty identification.
-3. **Software & IoT Projects** — Connected sensors, embedded prototypes, mobile, and web applications.
-4. **Software Integration into Existing Projects** — Dashboards, APIs, databases, and control interfaces for hardware setups.
-5. **Mentorship & Idea Development** — Guiding students from raw concept to clear execution plan.
+The primary CTA uses the Google Form URL configured in:
 
----
+- [src/config.js](src/config.js)
 
-## 🔄 Support Journey
+## Notes
 
-```
-Discover  ──>  Plan  ──>  Build  ──>  Document
-```
-
-1. **Discover**: Evaluate student degree, concept, challenges, and goals.
-2. **Plan**: Define scope, architecture, milestones, and toolstack.
-3. **Build**: Technical guidance, prototyping, integration, and debugging.
-4. **Document**: Report structuring, methodology writeups, and defense preparation.
-
----
-
-## 🚀 Development Roadmap
-
-- [x] Brand definition and visual identity specifications
-- [x] Landing page architecture and content strategy
-- [x] Lead capture and Google Form schema design
-- [ ] Responsive landing page implementation
-- [ ] Google Form deployment and link integration
-- [ ] QA, accessibility (WCAG AA), and performance optimization
-
-See [PROJECT_DOCUMENTATION.md](./PROJECT_DOCUMENTATION.md) for full specifications.
+- This repo is intentionally a marketing/inquiry website, not a full application dashboard.
+- Detailed product and content context is kept in [PROJECT_DOCUMENTATION.md](PROJECT_DOCUMENTATION.md).
+- The documentation here is kept intentionally brief and current to the actual implementation.
