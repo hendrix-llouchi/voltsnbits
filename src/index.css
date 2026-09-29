@@ -1664,6 +1664,16 @@ a {
 	gap: 0.5rem;
 }
 
+.site-footer__email-link {
+	margin-top: 0.8rem;
+}
+
+.site-footer__gmail-icon {
+	width: 1.125rem;
+	height: 1.125rem;
+	flex: 0 0 auto;
+}
+
 .site-footer__bottom {
 	display: flex;
 	justify-content: space-between;

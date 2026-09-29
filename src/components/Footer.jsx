@@ -43,6 +43,15 @@ export default function Footer() {
               Tell us about it
               <ArrowUpRight size={15} strokeWidth={1.8} aria-hidden="true" />
             </a>
+            <a className="site-footer__contact-link site-footer__email-link" href="mailto:voltsnbits26@gmail.com">
+              <svg className="site-footer__gmail-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 7.5 12 14l9-6.5" stroke="#EA4335" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M21 7.5v10" stroke="#4285F4" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M3 7.5v10" stroke="#FBBC04" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M3 17.5h18" stroke="#34A853" strokeWidth="2.5" strokeLinecap="round" />
+              </svg>
+              voltsnbits26@gmail.com
+            </a>
           </div>
         </div>
 
