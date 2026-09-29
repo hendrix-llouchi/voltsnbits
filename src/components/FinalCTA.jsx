@@ -13,13 +13,13 @@ export default function FinalCTA() {
           <div>
             <Eyebrow>Ready to start?</Eyebrow>
             <h2 className="final-cta__heading" id="final-cta-heading">
-              <span>Let&apos;s turn your idea into</span>
-              <em>a project you can defend.</em>
+              <span>Tell us what you&apos;re</span>
+              <em>working on.</em>
             </h2>
           </div>
           <div className="final-cta__details">
             <p className="final-cta__copy">
-              Whether you&apos;re starting with a rough idea, refining a research problem, or working through a technical challenge, tell us where you are and we&apos;ll help you figure out what comes next.
+              Share where you are in your project. We&apos;ll help you find the next step.
             </p>
             <div className="final-cta__actions">
               <Button
@@ -27,7 +27,7 @@ export default function FinalCTA() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start Your Project
+                Get project support
                 <ArrowUpRight size={15} strokeWidth={1.8} aria-hidden="true" />
               </Button>
               <a className="final-cta__process-link" href="#process">

@@ -1,4 +1,3 @@
-import EditorialStatement from './components/EditorialStatement.jsx'
 import FinalCTA from './components/FinalCTA.jsx'
 import Footer from './components/Footer.jsx'
 import Hero from './components/Hero.jsx'
@@ -17,7 +16,6 @@ export default function App() {
         <WhoWeHelp />
         <Services />
         <Process />
-        <EditorialStatement />
         <WhyUs />
         <FinalCTA />
       </main>

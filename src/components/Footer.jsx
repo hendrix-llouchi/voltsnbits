@@ -29,18 +29,13 @@ export default function Footer() {
                   <a href={link.href}>{link.label}</a>
                 </li>
               ))}
-              <li>
-                <a href={INQUIRY_URL} target="_blank" rel="noopener noreferrer">
-                  Start Your Project
-                </a>
-              </li>
             </ul>
           </nav>
 
           <div className="site-footer__contact">
             <h2 className="site-footer__label">Have a project in mind?</h2>
             <a className="site-footer__contact-link" href={INQUIRY_URL} target="_blank" rel="noopener noreferrer">
-              Tell us about it
+              Get project support
               <ArrowUpRight size={15} strokeWidth={1.8} aria-hidden="true" />
             </a>
             <a className="site-footer__contact-link site-footer__email-link" href="mailto:voltsnbits26@gmail.com">

@@ -53,7 +53,7 @@ export default function Navigation() {
               rel="noopener noreferrer"
               onClick={closeMenu}
             >
-              Start Your Project
+              Get project support
               <span aria-hidden="true">&rarr;</span>
             </Button>
           </div>
