@@ -20,15 +20,14 @@ The website exists to turn interest into inquiries. Visitors should quickly unde
 
 The landing page is organized into these sections:
 
-1. Navigation
-2. Hero section
-3. Who we help
-4. Services
-5. Process / how it works
-6. Editorial statement
-7. Why us
-8. Final CTA
-9. Footer
+1. Navigation (`Navigation.jsx`)
+2. Hero section (`Hero.jsx`)
+3. Who we help (`WhoWeHelp.jsx`)
+4. Services (`Services.jsx`)
+5. Process / how it works (`Process.jsx`)
+6. Why us (`WhyUs.jsx`)
+7. Final CTA (`FinalCTA.jsx`)
+8. Footer (`Footer.jsx`)
 
 This structure matches the current implementation in [src/App.jsx](src/App.jsx) and the related components under [src/components](src/components).
 
