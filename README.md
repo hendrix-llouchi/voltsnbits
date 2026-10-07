@@ -3,11 +3,10 @@
 [![React 19](https://img.shields.io/badge/React-19.0.0-61dafb?style=flat-square&logo=react)](https://react.dev)
 [![Vite 6](https://img.shields.io/badge/Vite-6.2.0-646cff?style=flat-square&logo=vite)](https://vite.dev)
 [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4.0-38bdf8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
+[![Version: 2.1](https://img.shields.io/badge/Version-2.1-5a3825?style=flat-square)](https://github.com/hendrix-llouchi/voltsnbits)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-An editorial, conversion-focused single-page marketing website for **Volts&Bits**, a specialized project mentorship service for final-year engineering, computer science, and capstone students.
-
-The platform is designed to introduce the mentorship model, showcase practical service offerings, guide students through the structured 4-step process, and convert inquiries via an integrated intake funnel.
+An editorial, conversion-focused marketing and inquiry website for **Volts&Bits**, a technical mentorship service assisting final-year engineering, computer science, and capstone students with research formulation, software development, IoT integration, and viva defense preparation.
 
 ---
 
@@ -15,7 +14,16 @@ The platform is designed to introduce the mentorship model, showcase practical s
 
 - [Overview](#overview)
 - [Core Philosophy](#core-philosophy)
-- [Landing Page Architecture](#landing-page-architecture)
+- [Version 2 (v2) Release & Changelog](#version-2-v2-release--changelog)
+  - [1. Hero Section Redesign](#1-hero-section-redesign)
+  - [2. Who We Help 6-Column Bento Grid](#2-who-we-help-6-column-bento-grid)
+  - [3. Conversion-Focused Flow & Content Tightening](#3-conversion-focused-flow--content-tightening)
+  - [4. Direct Contact & Communication Channels](#4-direct-contact--communication-channels)
+  - [5. Legal Pages & Lightweight Routing (v2.1)](#5-legal-pages--lightweight-routing-v21)
+  - [6. Visual & Editorial Scale Enhancements](#6-visual--editorial-scale-enhancements)
+- [Site Architecture & Routing](#site-architecture--routing)
+  - [Landing Page Sections](#landing-page-sections)
+  - [Legal & Policy Routes](#legal--policy-routes)
 - [Tech Stack](#tech-stack)
 - [Project Directory Structure](#project-directory-structure)
 - [Design System & Palette](#design-system--palette)
@@ -34,14 +42,14 @@ The platform is designed to introduce the mentorship model, showcase practical s
 
 ## Overview
 
-Final-year engineering and computing projects often stall due to ambiguous problem statements, scope creep, implementation roadblocks, or difficulty defending technical decisions before an academic panel.
+Final-year engineering and computing projects often encounter hurdles: ambiguous research questions, scope creep, implementation blockers, hardware-software integration challenges, or difficulty explaining design decisions before academic panels.
 
-**Volts&Bits** bridges this gap with practical, high-touch technical direction:
-- **Scope & Direction**: Defining clear, achievable project questions and deliverables.
-- **Deep Technical Support**: Unblocking architecture, software development, AI/ML integration, and hardware-software interfacing.
-- **Defense Readiness**: Ensuring the student understands every architectural decision, tool, and algorithm so they can defend their project with genuine confidence.
+**Volts&Bits** provides structured, hands-on technical guidance:
+- **Scope & Direction**: Defining clear, feasible research questions and milestone roadmaps.
+- **Deep Technical Support**: Unblocking architecture, software development, AI/ML pipelines, and connected IoT systems.
+- **Defense Readiness**: Ensuring students understand the decisions behind their project so they can defend their implementation with clarity and confidence.
 
-The website reflects this philosophy through a refined editorial aesthetic (warm paper surfaces, classic serif typography, minimal distraction) rather than generic corporate agency templates.
+The website delivers this message through a warm editorial design language inspired by print aesthetics (warm paper tones, classic serifs, and high-contrast typography) instead of generic agency templates.
 
 ---
 
@@ -49,24 +57,79 @@ The website reflects this philosophy through a refined editorial aesthetic (warm
 
 > **"BUILD IT. UNDERSTAND IT."**
 
-Volts&Bits is intentionally positioned around **comprehension and ownership**, not passive code dumping. The landing page copy, visual hierarchy, and process stages emphasize student empowerment and academic defensibility.
+Volts&Bits is built around **comprehension and ownership**, not passive code dumping. The service acts as a technical partner, helping students understand every algorithm, tool, and architectural trade-off so they own their work during academic defenses and reviews.
 
 ---
 
-## Landing Page Architecture
+## Version 2 (v2) Release & Changelog
 
-The single-page site (`src/App.jsx`) is organized into dedicated, accessible sections:
+Version 2 represents a comprehensive evolution from the initial release (v1), refining visual aesthetics, streamlining conversion pathways, modernizing grid layouts, and introducing formal legal infrastructure.
+
+### 1. Hero Section Redesign
+- **Full-Bleed Media Scrim**: Replaced the original framed box with a full-bleed media card featuring a smooth gradient scrim overlay (`linear-gradient(0deg, rgba(23, 21, 18, 0.76), ...)`), enhancing text readability over imagery.
+- **Refined Typography Scale**: Tuned the main headline (`hero__heading`) to `clamp(3rem, 5.5vw, 5.25rem)` with tighter letter-spacing (`-0.06em`) and balanced text wrapping (`max-width: 12ch`).
+- **High-Contrast Subtitle**: Updated the hero description font weight to semi-bold (`600`) and deep ink color (`--color-ink`) for immediate visual impact and legibility.
+- **Brand Brown CTA**: Elevated the primary action button from neutral ink to brand warm brown (`--color-brown` with `--color-brown-deep` hover) and expanded touch targets (`min-height: 3.25rem`).
+
+### 2. Who We Help 6-Column Bento Grid
+- **Modern Bento Grid**: Transitioned from the v1 alternating left-right stacked rows to a responsive 6-column bento grid layout:
+  - Top 2 milestone cards span **3 columns each** on widescreen.
+  - Remaining 3 milestone cards span **2 columns each**, creating a clean visual rhythm.
+- **Standardized Visual Flow**: Each card follows an intuitive vertical sequence: milestone index (`01`–`05`), framed image plate, and bold headline.
+- **Seamless Mobile Stacking**: Automatically collapses to a clean single-column card list on mobile screens without layout shifts.
+
+### 3. Conversion-Focused Flow & Content Tightening
+- **Streamlined Landing Page Flow**: Removed the standalone `EditorialStatement` quote block from the active render flow in [`App.jsx`](src/App.jsx) to eliminate scroll fatigue and direct visitors toward the intake funnel.
+- **Copy Tightening Across Sections**:
+  - **Services**: Descriptions simplified to concise, high-impact summaries (AI integration, gap analysis, IoT, software, mentorship).
+  - **Process**: Refined the 4 steps (Discover, Plan, Build, Document) into crisp, actionable milestones.
+  - **Why Us**: Principles focused on outcomes (Clarity, Technical Depth, Guided Building, Confident Defense).
+
+### 4. Direct Contact & Communication Channels
+- **Gmail Direct Link**: Integrated an official contact link (`voltsnbits26@gmail.com`) directly into the footer alongside the Google Form link.
+- **Stylized Brand SVG**: Added a handcrafted 4-color Google/Gmail SVG mark matching Google's brand colors (`#EA4335`, `#4285F4`, `#FBBC04`, `#34A853`).
+
+### 5. Legal Pages & Lightweight Routing (v2.1)
+- **Built-in Client-Side Routing**: Implemented lightweight pathname detection in [`src/App.jsx`](src/App.jsx) (`window.location.pathname`), rendering dedicated legal views without heavy router dependencies:
+  - `/terms-and-conditions` &rarr; [`TermsAndConditions.jsx`](src/components/TermsAndConditions.jsx)
+  - `/privacy-policy` &rarr; [`PrivacyPolicy.jsx`](src/components/PrivacyPolicy.jsx)
+- **Reusable Legal Template**: Built [`LegalPage.jsx`](src/components/LegalPage.jsx) featuring a clean back-navigation link (`← Back to Volts&Bits`), header metadata, and styled article layout.
+- **Legal Compliance & Academic Integrity**:
+  - Full terms defining service scope, student responsibility, and strict anti-plagiarism / academic integrity policies.
+  - Comprehensive privacy policy aligned with the **Ghana Data Protection Act**, detailing Google Forms data handling and student confidentiality.
+- **Footer Navigation**: Added direct links to Terms and Privacy in the footer.
+
+### 6. Visual & Editorial Scale Enhancements
+- **Heroic Section Headings**: Enabled large display scale for `WhoWeHelp` and `WhyUs` section titles, scaling up to `6.5rem` (`clamp(3.5rem, 8vw, 6.5rem)`) on desktop displays.
+- **Enhanced CSS Variables**: Consolidated custom property tokens in [`src/index.css`](src/index.css) for consistent spacing, colors, and transitions.
+
+---
+
+## Site Architecture & Routing
+
+### Landing Page Sections
+
+When visiting the root path (`/`), [`src/App.jsx`](src/App.jsx) renders the core marketing and inquiry funnel:
 
 | Section | Component | Description |
 | :--- | :--- | :--- |
-| **Header / Nav** | [`Navigation.jsx`](src/components/Navigation.jsx) | Sticky navigation bar with anchor links (`#services`, `#process`, `#about`), accessible mobile slide-out drawer, `Escape` key listener, and direct CTA. |
-| **Hero** | [`Hero.jsx`](src/components/Hero.jsx) | High-impact headline, mission summary, primary intake CTA, smooth anchor link to the process section, and framed editorial visual. |
-| **Who We Help** | [`WhoWeHelp.jsx`](src/components/WhoWeHelp.jsx) | Five critical student journey scenarios (Idea phase, Research gap, Unblocking build, IoT/hardware integration, Defense prep) with alternating layouts. |
-| **Services** | [`Services.jsx`](src/components/Services.jsx) | Five core service offerings: Machine Learning & AI, Gap Analysis, Software & IoT, System Integration, and Discovery Mentorship. |
-| **Process** | [`Process.jsx`](src/components/Process.jsx) | The 4-step Volts&Bits method: **01 Discover** &rarr; **02 Plan** &rarr; **03 Build** &rarr; **04 Document**, paired with a branded editorial media block. |
+| **Header / Nav** | [`Navigation.jsx`](src/components/Navigation.jsx) | Sticky navigation bar with anchor links (`#services`, `#process`, `#about`), accessible mobile drawer, keyboard `Escape` support, and CTA button. |
+| **Hero** | [`Hero.jsx`](src/components/Hero.jsx) | Headline, value proposition, primary intake CTA, anchor scroll link to process, and full-bleed editorial imagery. |
+| **Who We Help** | [`WhoWeHelp.jsx`](src/components/WhoWeHelp.jsx) | 6-column bento grid illustrating 5 student journey stages (idea phase, research gap, unblocking build, IoT integration, defense prep). |
+| **Services** | [`Services.jsx`](src/components/Services.jsx) | 5 core service offerings: AI & ML Integration, Gap Analysis, Software & IoT, Systems Integration, and Discovery Mentorship. |
+| **Process** | [`Process.jsx`](src/components/Process.jsx) | The 4-step Volts&Bits method: **01 Discover** &rarr; **02 Plan** &rarr; **03 Build** &rarr; **04 Document**, paired with a branded editorial showcase. |
 | **Why Us** | [`WhyUs.jsx`](src/components/WhyUs.jsx) | Value proposition cards focusing on Clarity, Technical Depth, Guided Building, and Confident Defense. |
-| **Final CTA** | [`FinalCTA.jsx`](src/components/FinalCTA.jsx) | Bottom conversion card prompting students to submit their project details. |
-| **Footer** | [`Footer.jsx`](src/components/Footer.jsx) | Brand identity, site navigation, direct inquiry link, and official Gmail contact link with stylized SVG branding. |
+| **Final CTA** | [`FinalCTA.jsx`](src/components/FinalCTA.jsx) | High-contrast conversion block driving inquiries to the intake form. |
+| **Footer** | [`Footer.jsx`](src/components/Footer.jsx) | Brand wordmark, site links, legal links, Google Form action, and official Gmail contact. |
+
+### Legal & Policy Routes
+
+The application handles dedicated views via lightweight pathname switching:
+
+| Path | Component | Purpose |
+| :--- | :--- | :--- |
+| `/terms-and-conditions` | [`TermsAndConditions.jsx`](src/components/TermsAndConditions.jsx) | Terms of service, mentorship scope, fees, payment guidelines, academic integrity policies, and governing law (Ghana). |
+| `/privacy-policy` | [`PrivacyPolicy.jsx`](src/components/PrivacyPolicy.jsx) | Data collection practices, Google Forms processing, confidentiality, and data subject rights under the Data Protection Act. |
 
 ---
 
@@ -76,10 +139,10 @@ The single-page site (`src/App.jsx`) is organized into dedicated, accessible sec
 - **Bundler & Dev Server**: [Vite 6](https://vite.dev) (`vite` ^6.2.0, `@vitejs/plugin-react` ^4.3.4)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com) (`tailwindcss` ^4.0.0, `@tailwindcss/vite` ^4.0.0)
 - **Icons**: [Lucide React](https://lucide.dev) (`lucide-react` ^1.48.0)
-- **Typography**: Google Fonts loaded in `index.html`:
-  - *Libre Baskerville* (Editorial serifs & headlines)
+- **Typography**: Google Fonts loaded via `index.html`:
+  - *Libre Baskerville* (Editorial serifs & section headings)
   - *Bodoni Moda* (Display italics & accents)
-  - *Manrope* (Clean, legible modern sans-serif body text)
+  - *Manrope* (Clean, modern sans-serif body text)
 
 ---
 
@@ -88,38 +151,41 @@ The single-page site (`src/App.jsx`) is organized into dedicated, accessible sec
 ```text
 vitsnbolt/
 ├── .agents/                    # Custom agent skills and workflow definitions
-├── dist/                       # Production build output (generated by vite build)
-├── public/                     # Static assets served as-is
+├── dist/                       # Optimized production build artifacts
+├── public/                     # Static assets served at root
 ├── src/
-│   ├── components/             # Page section components
-│   │   ├── ui/                 # Reusable atomic UI components
-│   │   │   ├── Button.jsx          # Polymorphic button/anchor supporting primary/secondary styles
+│   ├── components/             # Section & page components
+│   │   ├── ui/                 # Reusable atomic UI elements
+│   │   │   ├── Button.jsx          # Polymorphic button/anchor with variant styling
 │   │   │   ├── CircularButton.jsx  # Rounded icon action button
-│   │   │   ├── Divider.jsx         # Thin hairline horizontal rule
-│   │   │   ├── Eyebrow.jsx         # Section category badge / uppercase subtitle
-│   │   │   ├── MediaBlock.jsx      # Framed image container with meta tag and caption
-│   │   │   └── PlayButton.jsx      # Styled video/media action button
-│   │   ├── EditorialStatement.jsx  # Standalone editorial quote section
-│   │   ├── FinalCTA.jsx            # Closing call-to-action block
-│   │   ├── Footer.jsx              # Footer with links, copyright & Gmail contact
-│   │   ├── Hero.jsx                # Landing page hero banner
-│   │   ├── Navigation.jsx          # Sticky header & mobile drawer
-│   │   ├── PrincipleItem.jsx       # Single core principle row item
+│   │   │   ├── Divider.jsx         # Hairline rule divider
+│   │   │   ├── Eyebrow.jsx         # Uppercase category tracking badge
+│   │   │   ├── MediaBlock.jsx      # Framed image container with label & meta overlay
+│   │   │   └── PlayButton.jsx      # Interactive media action trigger
+│   │   ├── EditorialStatement.jsx  # Standalone editorial quote component
+│   │   ├── FinalCTA.jsx            # Conversion intake section
+│   │   ├── Footer.jsx              # Footer with links, copyright, legal & email
+│   │   ├── Hero.jsx                # Full-bleed landing page hero banner
+│   │   ├── LegalPage.jsx           # Reusable legal view layout wrapper
+│   │   ├── Navigation.jsx          # Sticky header & responsive mobile drawer
+│   │   ├── PrincipleItem.jsx       # Individual principle item card
+│   │   ├── PrivacyPolicy.jsx       # Complete privacy policy page
 │   │   ├── Process.jsx             # 4-stage Volts&Bits method section
 │   │   ├── ProcessStep.jsx         # Individual process step component
 │   │   ├── ServiceItem.jsx         # Individual service card item
 │   │   ├── Services.jsx            # Services overview section
-│   │   ├── WhoWeHelp.jsx           # Journey situations & milestones section
-│   │   └── WhyUs.jsx               # Value proposition & principles section
-│   ├── App.jsx                 # Main application layout composing sections
+│   │   ├── TermsAndConditions.jsx  # Complete terms & conditions page
+│   │   ├── WhoWeHelp.jsx           # 6-column bento grid student situations
+│   │   └── WhyUs.jsx               # Value proposition cards section
+│   ├── App.jsx                 # Application layout & lightweight path router
 │   ├── config.js               # Central configuration (e.g. INQUIRY_URL)
-│   ├── index.css               # Tailwind v4 setup, CSS custom properties & theme tokens
+│   ├── index.css               # Tailwind v4 setup, design tokens & custom styling
 │   └── main.jsx                # React root mount entrypoint
-├── index.html                  # HTML5 template, SEO meta tags, font preconnects
+├── index.html                  # HTML template, font preconnects & SEO tags
 ├── LICENSE                     # MIT License
-├── package.json                # Project dependencies and npm scripts
-├── PROJECT_DOCUMENTATION.md    # Detailed brand guidelines and product context
-├── README.md                   # Project overview and developer instructions
+├── package.json                # Dependencies and build scripts
+├── PROJECT_DOCUMENTATION.md    # Product documentation and brand guidelines
+├── README.md                   # Project overview, v2 changelog, and developer guide
 └── vite.config.js              # Vite build tool and plugin configuration
 ```
 
@@ -127,20 +193,20 @@ vitsnbolt/
 
 ## Design System & Palette
 
-The design language uses a calm, warm editorial palette defined in `src/index.css`:
+Defined in `src/index.css`, the color system delivers a calm, tactile aesthetic:
 
-| Token | Hex / Value | Usage |
+| Token | Hex / Value | Role |
 | :--- | :--- | :--- |
-| `--color-cream` | `#f3efe7` | Main page background, subtle paper texture tone |
-| `--color-white` | `#ffffff` | Clean card surfaces and contrasting media plates |
-| `--color-brown` | `#5a3825` | Primary brand accent, button backgrounds, selection |
-| `--color-brown-deep` | `#43291c` | Deep hover state for buttons and prominent accents |
-| `--color-ink` | `#171512` | Primary body text and deep headings |
-| `--color-muted` | `#625d57` | Secondary text, captions, and supporting copy |
-| `--color-hairline` | `#cfc9c0` | Subtle borders, dividers, and card outlines |
-| `--color-focus` | `#8d5b3d` | Accessible `:focus-visible` focus ring |
+| `--color-cream` | `#f3efe7` | Page background, warm paper foundation |
+| `--color-white` | `#ffffff` | Elevated cards, media frames, and contrasting containers |
+| `--color-brown` | `#5a3825` | Primary brand action color, button fill, text highlight |
+| `--color-brown-deep` | `#43291c` | Active/hover states for primary actions |
+| `--color-ink` | `#171512` | Main body text and primary headlines |
+| `--color-muted` | `#625d57` | Supporting descriptions, captions, and secondary copy |
+| `--color-hairline` | `#cfc9c0` | Subtle hairline dividers and card borders |
+| `--color-focus` | `#8d5b3d` | Accessible `:focus-visible` outline indicator |
 
-Fluid spacing and typography curves are implemented with CSS `clamp()` to ensure natural scaling across mobile, tablet, and widescreen viewports.
+Spacing, headings, and margins utilize CSS `clamp()` for smooth, viewport-adaptive scaling across mobile, tablet, and ultra-wide screens.
 
 ---
 
@@ -148,15 +214,15 @@ Fluid spacing and typography curves are implemented with CSS `clamp()` to ensure
 
 ### Project Inquiry Form
 
-All primary and secondary call-to-action links point to an external Google Form for intake qualification. The URL is centralized in [`src/config.js`](src/config.js):
+Primary and secondary conversion buttons point to an external Google Form. The URL is configured in [`src/config.js`](src/config.js):
 
 ```javascript
 export const INQUIRY_URL = 'https://forms.gle/QDLfpz8xmsbYBs4f8'
 ```
 
-### Contact Email
+### Direct Contact Email
 
-The site footer includes an official contact link in [`src/components/Footer.jsx`](src/components/Footer.jsx):
+Direct contact inquiries point to the official inbox in [`src/components/Footer.jsx`](src/components/Footer.jsx):
 - **Email**: [voltsnbits26@gmail.com](mailto:voltsnbits26@gmail.com)
 
 ---
@@ -173,14 +239,14 @@ The site footer includes an official contact link in [`src/components/Footer.jsx
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/hendrix-llouchi/vitsnbolt.git
-cd vitsnbolt
+git clone https://github.com/hendrix-llouchi/voltsnbits.git
+cd voltsnbits
 npm install
 ```
 
 ### Development Server
 
-Start Vite's fast local development server with hot module replacement (HMR):
+Launch Vite's development server with hot module replacement (HMR):
 
 ```bash
 npm run dev
@@ -190,17 +256,17 @@ Open `http://localhost:5173` in your browser.
 
 ### Production Build
 
-Compile and bundle optimized static assets for production:
+Compile and optimize the project for production:
 
 ```bash
 npm run build
 ```
 
-The compiled bundles and assets will be output to the `dist/` directory.
+Assets are output to the `dist/` directory.
 
 ### Preview Build
 
-Locally preview the generated production build before deploying:
+Preview the production build locally before deploying:
 
 ```bash
 npm run preview
@@ -208,12 +274,12 @@ npm run preview
 
 ### Windows PowerShell Troubleshooting
 
-If running `npm run build` or `npm run dev` in Windows PowerShell throws:
+If running `npm run ...` in Windows PowerShell throws:
 ```text
 PSSecurityException: File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system
 ```
 
-Run via Windows Command Prompt, or bypass the execution policy for your current session:
+Run using the `cmd` wrapper or adjust the session execution policy:
 
 ```powershell
 # Option A: Run via cmd wrapper
@@ -229,12 +295,12 @@ npm run dev
 
 ## Deployment
 
-The project builds to a fully static single-page application (`dist/`). It can be hosted on any static hosting platform:
+The application compiles to static HTML, CSS, and JavaScript in `dist/`. It can be deployed to any static host:
 
-- **Vercel**: Connect the repository; Vite build settings will be automatically detected (`npm run build` &rarr; `dist`).
+- **Vercel**: Link repository; build command is `npm run build` and output directory is `dist`. Add an SPA rewrite rule (`/*` &rarr; `/index.html`) if deep linking to legal pages.
 - **Netlify**: Set build command to `npm run build` and publish directory to `dist`.
-- **Firebase Hosting**: Run `firebase init hosting` targeting `dist` as public root.
-- **Cloudflare Pages / GitHub Pages**: Deploy the `dist` directory with appropriate SPA rewrite rules if routing is added.
+- **Firebase Hosting**: Run `firebase init hosting` targeting `dist` as public directory.
+- **Cloudflare Pages / GitHub Pages**: Deploy the `dist` directory.
 
 ---
 
